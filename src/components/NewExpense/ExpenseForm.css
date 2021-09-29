@@ -24,3 +24,12 @@
   .new-expense__actions {
     text-align: right;
   }
+   
+  .flex-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ 
+
+ 

@@ -25,7 +25,7 @@ const ExpenseForm = (props) =>{
         const expenseData ={
             title : enteredTitle,
             amount : enteredAmount,
-            data : new Date(enteredDate)
+            date : new Date(enteredDate)
         };
 
         console.log(expenseData);
@@ -35,6 +35,10 @@ const ExpenseForm = (props) =>{
         seEnteredAmount('');
         setEnteredSDate('');
 
+    }
+
+    const cancelClickHandler = () =>{
+        props.onCancleExpense()
     }
 
     return (
@@ -53,8 +57,15 @@ const ExpenseForm = (props) =>{
                 <input type='date' value={enteredDate}  min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler}/>
             </div>
         </div>
-        <div className="new-expense__actions">
+        
+       <div className="flex-container">
+       <div >
+            <button type='button' onClick={cancelClickHandler} >Cancel</button>
+        </div>
+        <div  >
             <button type='submit'>Add Expense</button>
+        </div>
+        
         </div>
     </form>
     );
